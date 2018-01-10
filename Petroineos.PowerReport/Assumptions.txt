@@ -1,0 +1,14 @@
+﻿Assumptions made
+
+That the purpose of this is to produce files showing aggregate positions for a given peiod - not aggregate positions for the 
+day. That is, it does not maintain a running total across periods.
+
+Assumed use is that the generated files are consumed by a downstream system
+
+If GetTrades errors then we save an empty file rather than produce zeros for each period. That way a downstream system can handle it 
+rather than assume that there was no activity in that period.
+
+There are no more than 24 periods in a day
+
+Assume that interval can't be less than 1 minute nor more than 1 day
+
